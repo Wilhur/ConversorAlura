@@ -39,8 +39,42 @@ public class ConversorAlura {
             System.out.println("Ingrese el valor a convertir");
             int cant = teclado.nextInt();// ALMACENA LA CANTIDAD EN VAR CANT//
             
-            String baseCode = "",tarjetCode = "";
-      }
+            String baseCode = "",targetCode = ""; //baseCode y targetCode almacenan los codigos de las monedas base y del destino//
+            switch (eleccion){  
+                case 1 ->{
+                    baseCode = "USD";
+                    targetCode = "ARS";
+                }
+                case 2 -> {
+                    baseCode = "USD";
+                    targetCode = "USD";
+                }
+                case 3 -> {
+                    baseCode ="USD";
+                    targetCode = "BRL";
+                }
+                case 4 -> {
+                    baseCode = "BRL";
+                    targetCode = "USD";
+                }
+                case 5 -> {
+                    baseCode = "USD";
+                    targetCode = "COP";             
+                }
+                case 6 -> {
+                    baseCode = "COP";
+                    targetCode = "USD";
+                }
+            
+                default -> System.out.println("Elija una opcion valida del 1 al 7");
+            }
+            
+            //LLAMA A UN METODO EN LA CLASE DE BUSQUEDA PARA OBTENER LA TASA DE CONVERSION//
+            if (!baseCode.isEmpty()){
+                double tasaConversion = consulta.busquedaMoneda(baseCode, targetCode);
+            }
+            
+        }
         
         
     
