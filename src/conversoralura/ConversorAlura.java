@@ -23,7 +23,7 @@ public class ConversorAlura {
             System.out.println("""
                                1. Dolar => Peso Argentino
                                2. Peso Argentino => Dolar
-                               3. Dolar => Real Brazileño  //TEXTO DEL MENÚ DE OPCIONES//
+                               3. Dolar => Real Brazileño  
                                4. Real Brazileño => Dolar
                                5. Dolar => Peso Colombiano
                                6. Peso Colombiano => Dolar
@@ -72,6 +72,12 @@ public class ConversorAlura {
             //LLAMA A UN METODO EN LA CLASE DE BUSQUEDA PARA OBTENER LA TASA DE CONVERSION//
             if (!baseCode.isEmpty()){
                 double tasaConversion = consulta.busquedaMoneda(baseCode, targetCode);
+                valorFinal = (long) (cant * tasaConversion);
+                System.out.println("El valor de " + cant + " [" + baseCode + "] corresponde al valor final de " + valorFinal + " [" + targetCode + "]");
+                
+                
+                System.out.println("------------------------------------------------");
+                System.out.println("Nos vemos luego");
             }
             
         }
